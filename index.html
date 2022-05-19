@@ -4,10 +4,62 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link
+            rel="stylesheet"
+            href="lib/bootstrap-4.0.0-dist/css/bootstrap.min.css"
+        />
         <title>Document</title>
     </head>
     <body>
-        <h1>JavaScript kurzus</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-3"></div>
+                <div class="col-6">
+                    <h3>Hamburger rendelés</h3>
+                    <form action="">
+                        <div class="form-group">
+                            <label for="">Feltét</label>
+                            <input
+                                type="text"
+                                name="top-input"
+                                class="form-control"
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label for="">Mennyiség</label>
+                            <input
+                                type="number"
+                                class="form-control"
+                                id="amount-input"
+                            />
+                        </div>
+                        <div class="form-group">
+                            Fizetendő:
+                            <span class="price-output">0</span>Ft
+                        </div>
+                        <button
+                            onclick="calculatePrice()"
+                            type="button"
+                            class="btn btn-primary"
+                        >
+                            Megrendelés
+                        </button>
+                        <button
+                            onclick="toggleShowContentBtn()"
+                            type="button"
+                            class="btn btn-primary mt-2"
+                            id="showContentBtn"
+                        >
+                            Mutasd a tartalmat
+                        </button>
+                        <div id="content-div"></div>
+                    </form>
+                </div>
+                <div class="col-3"></div>
+            </div>
+        </div>
+
         <script src="js/main.js"></script>
     </body>
 </html>
