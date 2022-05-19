@@ -1,23 +1,27 @@
-let price = 5;
-console.log(price);
-console.log(typeof price);
+function calculatePrice() {
+    const amountInput = document.querySelector("#amount-input");
+    const amount = amountInput.value;
+    const hamburgerPrice = 1200;
+    const priceOutputElement = document.querySelector(".price-output");
+    console.log(priceOutputElement);
+    const price = amount * hamburgerPrice;
+    priceOutputElement.innerHTML = price;
+}
 
-price = "Hello";
-console.log(price);
-console.log(typeof price);
+let isContentDisplayed = false;
+function toggleShowContentBtn() {
+    isContentDisplayed = !isContentDisplayed;
 
-price = "true";
-console.log(price);
-console.log(typeof price);
+    const showContentBtn = document.querySelector("#showContentBtn");
+    const contentDiv = document.querySelector("#content-div");
+    const content =
+        "<h1>Ez egy rejtett tartalom</h1><p>Itt meg egy kamu szöveg van benne. Huhuuu!!</p>";
 
-price = true;
-console.log(price);
-console.log(typeof price);
-
-let name = "almafa";
-console.log(name);
-
-console.log(name.replace("a", "b"));
-console.log(name);
-
-console.log(name.replaceAll("a", "b"));
+    if (isContentDisplayed) {
+        showContentBtn.innerHTML = "Rejtsd el a tartalmat";
+        contentDiv.innerHTML = content;
+    } else {
+        showContentBtn.innerHTML = "Mutasd a tartalmat";
+        contentDiv.innerHTML = "";
+    }
+}
